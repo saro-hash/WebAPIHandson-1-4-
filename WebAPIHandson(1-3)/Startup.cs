@@ -27,6 +27,7 @@ namespace WebAPIHandson_1_3_
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<EmpDBContext>(op => op.UseSqlServer(Configuration.GetConnectionString("constr"));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
